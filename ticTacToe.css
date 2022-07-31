@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation:wght@500&family=Indie+Flower&display=swap');
+
+body {
+    /* background-color: #716464; */
+    text-align: center;
+    background-image: url('./png/bg8.jpg');
+
+    background-color: black;
+    background-size: auto 740px;
+    background-position: right top;
+    /* background-repeat: no-repeat; */
+    /* background-position: top right; */
+    /* height: 100%; */
+    /* background:rgba(255,255,255,0.5); */
+}
+
+#table {
+    border-collapse: collapse;
+    border-style: hidden;
+    margin: auto;
+    text-align: center;
+    margin-top: 60px;
+    position: absolute;
+    top: 5%;
+    right: 20px;
+    transform: translateY(-10%);
+    left: 2%;
+    right: 2%;
+}
+
+.data {
+    border: 1px solid white;
+    width: 160px;
+    height: 160px;
+    max-width: 160px;
+    max-height: 160px;
+    text-align: center;
+
+}
+
+.img {
+    width: 1500px;
+    height: 150px;
+    border-radius: 10px;
+    text-align: center;
+    /* background-color: #716464; */
+    margin: auto;
+    max-width: 150px;
+    max-height: 150px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* .currentTurn {
+    background-color: rgba(255,255,255,0.5);
+    color: black;
+
+} */
+
+.text {
+    font-family: 'Indie Flower', cursive;
+    /* font-family: 'Edu NSW ACT Foundation', cursive; */
+    letter-spacing: .2rem;
+}
+
+#scoreBox {
+    width: 100%;
+    /* margin: auto; */
+    position: absolute;
+    top: 85%;
+    text-align: center;
+    /* padding-top: 40px; */
+
+
+
+}
+
+#scoreTable {
+    margin: auto;
+
+}
+
+#startNewGame {
+    margin-top: 20px;
+    height: 30px;
+    font-size: 20px;
+}
+
+.dScore {
+    min-width: 100px;
+    font-family: 'Indie Flower', cursive;
+    letter-spacing: 0.1rem;
+    font-size: 25px;
+    padding-inline: 20px;
+    color: white;
+}
+
+@keyframes flicker {
+
+    /* from {background-color: '';}
+to {background-color: rgba(255,255,255,0.5);} */
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

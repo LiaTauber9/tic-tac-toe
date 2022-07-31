@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            /* background-color: #716464; */
+            /* text-align: center;
+            background-image:  url('./sourseImg/bg4.jpg');
+            background-color: black;
+            background-size: cover;
+            background-position: top right;
+            background-repeat: no-repeat; */
+
+            text-align: center;
+            position: relative;
+            background: #eeeeee url('./png/2222.jpg') 0 0 repeat-x;
+            background-color: black;
+            background-size: auto 790px;
+            background-position: top center;
+        }
+
+        .container{
+            /* position: absolute;
+            top: 35%;
+            width: 100%; */
+
+            position: absolute;
+            top: 240px;
+            width: 100%;
+            text-align: center;
+        }
+
+        p{
+            color: white;
+            font-size: 35px;
+            text-align: center;
+            font-family: 'Indie Flower', cursive;
+        }
+
+        input{
+            margin-bottom: 20px;
+            margin-left: 10px;
+            height: 20px;
+            font-family: 'Indie Flower', cursive;
+            font-size: 20px;
+            color: black;
+        }
+
+        button{
+            position: relative;
+            top: 30px;
+            font-family: 'Indie Flower', cursive;
+            color: black;
+            font-size: 20 px;
+        }
+    </style>
+    <script>
+        function logIn(){
+            let userName = document.getElementById('userName').value;
+            let password = document.getElementById('password').value;
+            var users = JSON.parse(localStorage.getItem("users") || "{}");
+            //console.log(users[userName].password)
+            if(users[userName]){
+                if(users[userName].password == password){
+                    localStorage.setItem('currentLoggedPlayer',JSON.stringify({name: userName, score: 0}));
+                    document.getElementById('container1').style.display = 'none';
+                    document.getElementById('container2').style.display = 'block';
+                    //;
+                }else{
+                    alert('password is not correct');
+                }
+            }else{
+                alert('This user is not exist');
+            }
+
+        }
+
+        function next(){
+            document.getElementById('container2').style.display = 'none';
+            document.getElementById('container3').style.display = 'block';
+                  
+        }
+
+        function initializeGame(){
+            let guestName = document.getElementById("enterGuestName").value || 'guest';
+                localStorage.setItem('currentGuestPlayer',JSON.stringify({name: guestName, score: 0}));
+                localStorage.setItem('currentTie',JSON.stringify({name: 'TIE', score: 0}));
+                window.location ='ticTacToe.html';
+        }
+
+        
+    </script>
+</head>
+
+<body>
+    <div id="container1" class="container">       
+        <p style="display: inline;">Enter mail:</p>
+        <input id="userName" type="text">
+    </br>
+        <p style="display: inline;">Enter password:</p>
+        <input id="password" type="text">
+    <div>
+        <button id="submit"  onclick="logIn()">LOG IN</button>
+        <button style="margin-left: 20px;" onclick= 'window.location = "registration.html"'>REGISTER NEW USER</button>
+    </div>
+    </div>
+
+    <div id="container2" class="container" style="display: none;">
+        <p id="currentTurn" class="text">You're logged in!</p> </br>
+        <button onclick="next()">NEXT</button>
+    </div>
+
+    <div id="container3" class="container" style="display: none;">
+        <p>Enter the name of second player:</p>
+        <input id="enterGuestName" class="text" type="text" value="">
+    </br>
+        <button id="submitGuestName" class="text" onclick= "initializeGame()">START GAME</button>
+    </div>
+    
+
+    
+</body>
+</html>

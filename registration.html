@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            text-align: center;
+            position: relative;
+            background-image: url('./png/2222.jpg');
+            background-color: black;
+            background-size: auto 790px;
+            background-position: top center;
+            /* background-repeat: no-repeat;*/
+
+        }
+
+        p {
+            color: white;
+            font-size: 35px;
+            text-align: center;
+            font-family: 'Indie Flower', cursive;
+            display: inline;
+
+        }
+
+        input {
+            margin-bottom: 20px;
+            margin-left: 10px;
+            height: 20px;
+            font-family: 'Indie Flower', cursive;
+            font-size: 20px;
+            color: black;
+        }
+
+        button {
+            height: 30px;
+            font-family: 'Indie Flower', cursive;
+            font-family: 'Indie Flower', cursive;
+            color: black;
+        }
+
+        #container {
+            position: absolute;
+            top: 240px;
+            width: 100%;
+            text-align: center;
+
+        }
+    </style>
+
+    <script>
+        function register() {
+            let userName = document.getElementById('userName').value;
+            let password = document.getElementById('password').value;
+            let name = document.getElementById('name').value;
+            if (userName && password && name) {
+                var user = { [userName]: { userName: userName, password: password, name: name } };
+
+                let existUsers = JSON.parse(localStorage.getItem('users')) || {};
+                if (existUsers[userName]) {
+                    alert('This mail is already exist, please log in')
+                } else {
+                    let users = Object.assign(existUsers, user);
+                    console.log(users);
+                    localStorage.setItem('users', JSON.stringify(users));
+                    logIn();
+                }
+            }else{
+                alert('Some fields are missing')
+            }
+
+        }
+
+        function logIn() {
+            window.location('index.html')
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <p>Enter mail:</p>
+        <input id="userName" type="text">
+        </br>
+
+        <p>Enter password:</p>
+        <input id="password" type="text">
+        </br>
+
+        <p>Enter your player name:</p>
+        <input id="name" type="text">
+        </br>
+
+        <div style="margin-top: 20px;">
+            <button id="submit" onclick="register()">REGISTER</button>
+            <button onclick="logIn()" style="margin-left: 20px;">LOG IN</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

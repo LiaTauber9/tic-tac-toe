@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="ticTacToe.css">
+    <script src="ticTacToe.js"></script>
+</head>
+
+<body>
+    <div id="tableBox" style="display: none;">
+        <p id="winMessage" style="color: white; font-size: 100px; margin: 0px; margin-bottom: 20px;">IT'S A TIE!</p>
+        <img id="winImg" src="./png/tie.png" style= "margin: auto;">
+    </br>
+        <button id="startNewGame" onclick=window.location.reload()>START NEW GAME</button>
+    </div>
+
+    <div id="scoreBox">
+        <table id="scoreTable">
+            <tr>
+                <th id="logged" class="dScore"></th>
+                <th id="tie" class="dScore">TIE</th>
+                <th id="guest" class="dScore">GUEST</th>
+            </tr>
+            <tr>
+                <td id="loggedScore" class="dScore" style="font-size: 30px;">0</td>
+                <td id="tieScore" class="dScore">0</td>
+                <td id="guestScore" class="dScore">0</td>
+            </tr>
+        </table>
+       
+    </div>
+
+
+</body>
+
+</html>
